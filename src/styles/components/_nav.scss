@@ -1,0 +1,56 @@
+.navbar{
+    display: none;
+}
+
+.active {
+    background-color: $darkGray;
+    list-style: none;
+    text-decoration: none;
+    display: block;
+    animation: navigation .6s ease-out;
+
+}
+
+@keyframes navigation {
+    0% {
+        // opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        // opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.navbar ul{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    margin: 15px 15px 0 15px;
+    padding-left: 0;
+    padding-bottom: 20px;
+    padding-right: 35px;
+    margin: 0 auto;
+    font-family: $bodyFont;
+    margin-top: -20px;
+}
+
+.navbar li{
+    list-style: none;
+}
+
+.navbar li a{
+    display: block;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    padding-right: 0;
+    width: 100%;
+    text-align: right;
+}
+
+.navbar li a:hover, .navbar li a:active{
+    color: $lightBlue
+}

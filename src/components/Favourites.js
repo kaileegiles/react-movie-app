@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { FavMovies } from './FavMovies';
-import PageNav from './PageNav';
 import { Link } from 'react-router-dom';
 
 const Favourites = () => {
@@ -34,7 +33,6 @@ const Favourites = () => {
             return (
                 <main className="main-home">
                     <section className="section-home">
-                        <PageNav />
                         <div className="fav-content">
                             {favMovieData && <FavMovies removeFav={removeFav} results={favMovieData}/>}
                             {(favMovieData === null || favMovieData.length === 0) &&

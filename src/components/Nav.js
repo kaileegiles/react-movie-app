@@ -4,15 +4,15 @@ import { NavLink } from 'react-router-dom';
 const HomeNav = () => {
 
     return (
-        <nav className="home-navbar">
-            <ul className="home-ul">
-                <li className="home-li">
+        <nav className="navbar">
+            <ul>
+                <li>
                     <NavLink to="/" exact>Home</NavLink>
                 </li>
-                <li className="home-li">
+                <li>
                     <NavLink to="/about">About</NavLink>
                 </li>
-                <li className="home-li">
+                <li>
                     <NavLink to="/favourites">Favourites</NavLink>
                 </li>
             </ul>

@@ -1,10 +1,25 @@
 
 header{
-    background-color: $darkGray;
-    font-family: $headingFont;
-    font-style: italic;
-    font-weight: 400;
+    background-color: $black;
+    font-family: $bodyFont;
     margin: 0;
+}
+
+.header-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $darkGray;
+}
+
+.hamburger {
+    width: 40px;
+    height: 3px;
+    background-color: white;
+    display: block;
+    margin-bottom: 7px;
+    margin-right: 35px;
+    border-radius: 5px;
 }
 
 .logo {
@@ -28,13 +43,13 @@ header{
     width: 38%;
     height: 1px;
     bottom: 0;
-    //left: 25%;
-    border-bottom: 3px solid $lightGreen;  
+    border-bottom: 3px solid $lightBlue;
 }
 
 .logo-link {
     text-decoration: none;
     color: white;
+    font-weight: 300;
 }
 
 

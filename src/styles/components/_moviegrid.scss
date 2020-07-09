@@ -4,31 +4,32 @@
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     padding-top: 5%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     margin-bottom: 0;
     color: $lightGray;
     font-family: $bodyFont;
     justify-items: center;
+    padding-bottom: 30px;
 
     
     
         img {
             margin-left: auto;
             margin-right: auto;
+            border-radius: 5px;
         }
     
         h2, h3{
-            
-            color: $lightGreen;
-            text-align: center;
-            font-size: 1.1rem;
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 30px;
         }
 
         p {
             
             text-align: left;
-            font-size: 0.9rem;
+            font-size: 1em;
             color: white;
         }
 
@@ -43,7 +44,7 @@
         }
 
         h2 a {
-            color: $lightGreen;
+            color: $lightBlue;
         }
 
         a {
@@ -59,104 +60,112 @@
 
 .title-link {
     text-decoration: none;
-    color: $lightGreen;
+    color: $lightBlue;
 }
 
-.btn-div {
-    display: flex;
-    justify-content: center;
-}
-
-button {
-    padding: 7px;
-    color: $lightGreen;
-    background-color: $lightGreen;
-    width: 100px;
-    border: none;
+a.btn-more-info {
     margin-top: 15px;
-}
-
-button a {
-    text-decoration: none;
-    color: $black;
-    font-size: 14px;
-}
-
-.grid-content {
+    width: 100%;
+    background-color: $lightBlue;
+    text-align: center;
+    font-family: $bodyFont;
+    font-size: 1em;
     display: flex;
     justify-content: center;
+    padding: 7px;
+    border-radius: 5px;
 }
 
 .rating {
-    margin-left: 0;
-    margin-right: 30px;
+    display: flex;
+    align-items: center;
+
+    svg path {
+        fill: $lightBlue;
+    }
+
+    p {
+        font-size: 1.1em;
+        margin: 0;
+        margin-left: 10px;
+        color: $lightBlue;
+    }
 }
 
 .release {
-    margin-left: 30px;
-    margin-right: 50px;
+    display: flex;
+
+    p {
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+}
+
+.movie-grid p {
+    display: block;
 }
 
 .movie-container, .fav-movie-container {
-    margin-top: 30px;
+    margin-top: 0;
     background-color: $darkGray;
-    padding: 40px 20px;
+    background-image: url('/images/webb-dark.png');
+    background-size: contain;
+    padding: 30px;
     max-width: 385px;
     min-height: 641.16px;
-
-        .rem-fav{
-            display: flex;
-            justify-content: center;
-            
-            margin-bottom: 30px;
-        
-         .remove-fav {
-            
-            cursor: pointer;
-            text-decoration: none;
-            color: $lightGreen;
-            font-size: 14.4px;
-            background-color: $black;
-        }
-    }
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px $lightBlue;
 }
 
 .fav-overview {
     color: white;
+    margin: 30px 0;
 }
 
 .more {
     text-decoration: none;
-    color: $lightGreen;
+    color: $lightBlue;
     font-size: 14.4px;
 }
 
-@media only screen and (min-width: 740px) {
+@media only screen and (min-width: 600px) {
 
     .movie-grid{
         grid-template-columns: repeat(2,1fr);
         padding-top: 2%;
+
+        h2 {
+            min-height: 62px;
+        }
     }
 
     .movie-container {
-        height: 850px;
+        min-height: 750px;
+    }
+
+    .fav-overview {
+        min-height: 88px;
     }
 
 }
 
-@media only screen and (min-width: 865px) {
-
-    .fav-movie-container {
-        min-height: 740px;
-    }
-
-}
-
-
-
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 850px) {
     .movie-grid{
         grid-template-columns: repeat(3,1fr)
+    }
+
+}
+
+@media only screen and (min-width: 1300px) {
+    .movie-grid{
+        grid-template-columns: repeat(4,1fr);
+    }
+
+}
+
+@media only screen and (min-width: 1750px) {
+    .movie-grid{
+        grid-template-columns: repeat(5,1fr);
     }
 
 }

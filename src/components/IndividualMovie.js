@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { API_KEY, BASE_URL } from '../globals/variables';
 import { useParams } from 'react-router-dom';
-import PageNav from './PageNav';
 import {covertNumericDateToReadableFormat, isMovieInStorage} from '../utilities/storageMaker';
+import Background from '../images/darkness.png';
 
 const IndividualMovie = (props) => {
+
+    const bgStyle = {
+        backgroundImage: `url(${Background})`
+    }
 
     // Page variables
     let { id } = useParams();
@@ -59,10 +63,9 @@ const IndividualMovie = (props) => {
 
         return (
         <main className="main-movie">
-            <PageNav />
             <section className="section-movie">
                 { movieData !== null && <div className="im-page">
-                    <div className="movie-info-container">
+                    <div className="movie-info-container" style={bgStyle}>
                         <div className="poster-container">
                         {movieData.poster_path ? <img src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`} alt={movieData.title} /> : <img src={require('../images/poster-backup-large')} alt='Poster-not-available'/>}
                         </div>
@@ -74,7 +77,7 @@ const IndividualMovie = (props) => {
                                 ?
                                 <div id="fav-container" className="fav-active" onClick={() => {setFavourite()}}>
                                     <div className="heart-shape"></div>
-                                    <p>Added to favourites</p>
+                                    <p>Remove from favourites</p>
                                 </div>
                                 :
                                 <div id="fav-container" className="fav-container" onClick={() => {setFavourite()}}>
@@ -82,17 +85,13 @@ const IndividualMovie = (props) => {
                                     <p>Add to favourites</p>
                                 </div>
                                 }
-                                <h3>Overview</h3>
-                                <p>{movieData.overview}</p>
-                                <div className="movie-text-flex">
-                                    <div className="release">
-                                        <h3>Release date</h3>
-                                        <p>{covertNumericDateToReadableFormat(movieData.release_date)}</p>
-                                    </div>
-                                    <div className="rating">
-                                        <h3>Rating</h3>
-                                        <p>{movieData.vote_average * 10}%</p>
-                                    </div>
+                                <p className="im-overview">{movieData.overview}</p>
+                                <div className="rating">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                    <p>{movieData.vote_average.toFixed(1)}</p>
+                                </div>
+                                <div className="release">
+                                    <p>Released: {covertNumericDateToReadableFormat(movieData.release_date)}</p>
                                 </div>
                             </div>
                         </div>
